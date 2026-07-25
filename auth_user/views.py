@@ -15,4 +15,4 @@ def login_view(request):
 
 
 def admin_dashboard_view(request):
-    return render(request, 'admin/index.html')
+    return render(request, 'auth/admin_dashboard.html')
