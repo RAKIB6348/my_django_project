@@ -20,3 +20,7 @@ def admin_dashboard_view(request):
 
 def profile_view(request):
     return render(request, 'auth/profile.html')
+
+
+def profile_edit_view(request):
+    return render(request, 'auth/profile_edit.html')

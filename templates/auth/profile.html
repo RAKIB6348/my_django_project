@@ -30,9 +30,9 @@
                   <div class="about-text">Lorem ipsum dolor sit amet.</div>
                </div>
                <div class="col-auto profile-btn">
-                  <a href="#" class="btn btn-primary">
-                  Edit
-                  </a>
+<a href="{% url 'auth_user:profile_edit' %}" class="btn btn-primary">
+                              Edit
+                              </a>
                </div>
             </div>
          </div>
@@ -139,9 +139,46 @@
                      </div>
                   </div>
                </div>
+ </div>
+            <div class="modal fade" id="edit_personal_details" tabindex="-1" role="dialog">
+               <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title">Edit Personal Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        <form>
+                           <div class="form-group">
+                              <label>Name</label>
+                              <input class="form-control" type="text" value="John Doe">
+                           </div>
+                           <div class="form-group">
+                              <label>Date of Birth</label>
+                              <input class="form-control" type="text" value="24 Jul 1983">
+                           </div>
+                           <div class="form-group">
+                              <label>Email ID</label>
+                              <input class="form-control" type="email" value="john.doe@example.com">
+                           </div>
+                           <div class="form-group">
+                              <label>Mobile</label>
+                              <input class="form-control" type="text" value="305-310-5857">
+                           </div>
+                           <div class="form-group">
+                              <label>Address</label>
+                              <textarea class="form-control" rows="3">4663 Agriculture Lane, Miami, Florida - 33165, United States.</textarea>
+                           </div>
+                           <button class="btn btn-primary" type="submit">Save Changes</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
             </div>
-         </div>
-      </div>
-   </div>
-</div>
+          </div>
+       </div>
+    </div>
+ </div>
 {% endblock %}
