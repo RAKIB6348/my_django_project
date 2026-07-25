@@ -22,5 +22,13 @@ def profile_view(request):
     return render(request, 'auth/profile.html')
 
 
+from django.contrib.auth import logout
+
+
 def profile_edit_view(request):
     return render(request, 'auth/profile_edit.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('auth_user:login')
