@@ -12,3 +12,7 @@ def login_view(request):
             login(request, user)
             messages.success(request, 'Login successful.')
     return render(request, 'auth/login.html')
+
+
+def admin_dashboard_view(request):
+    return render(request, 'admin/index.html')
