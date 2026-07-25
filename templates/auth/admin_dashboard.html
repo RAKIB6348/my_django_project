@@ -287,6 +287,7 @@
             </div>
          </div>
          <div class="page-wrapper">
+            {% block content %}
             <div class="content container-fluid">
                <div class="page-header">
                   <div class="row">
@@ -559,11 +560,12 @@
                   </div>
                </div>
             </div>
-            <footer>
-               <p>Copyright © 2020 Dreamguys.</p>
-            </footer>
-         </div>
-      </div>
+             <footer>
+                <p>Copyright © 2020 Dreamguys.</p>
+             </footer>
+             {% endblock %}
+          </div>
+       </div>
       <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
       <script src="{% static 'assets/js/popper.min.js' %}"></script>
       <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
