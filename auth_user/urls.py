@@ -5,5 +5,5 @@ app_name = 'auth_user'
 
 urlpatterns = [
     path('', views.login_view, name='login'),
-    path('dashboard/admin', views.admin_dashboard_view, name='admin_dashboard'),
+    path('dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
 ]
