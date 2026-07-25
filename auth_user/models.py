@@ -3,10 +3,17 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
+    USER_TYPE_CHOICES = (
+        ('admin', 'Admin'),
+        ('teacher', 'Teacher'),
+        ('student', 'Student'),
+    )
+
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
     profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='student')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
