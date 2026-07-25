@@ -13,7 +13,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
     profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
-    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='student')
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
