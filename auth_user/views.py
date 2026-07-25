@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 
@@ -11,6 +11,9 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'Login successful.')
+            return redirect('auth_user:admin_dashboard')
+        else:
+            messages.error(request, 'Invalid email or password.')
     return render(request, 'auth/login.html')
 
 
@@ -20,9 +23,6 @@ def admin_dashboard_view(request):
 
 def profile_view(request):
     return render(request, 'auth/profile.html')
-
-
-from django.contrib.auth import logout
 
 
 def profile_edit_view(request):
