@@ -1,0 +1,25 @@
+# Cache directories
+cache/
+.cache/
+**/cache/
+**/.cache/
+
+# Common cache files
+*.cache
+*.tmp
+*.temp
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Node cache
+node_modules/
+.npm/
+.yarn/cache/
+
+# Framework caches
+.next/
+.nuxt/
+.vite/
+.parcel-cache/
