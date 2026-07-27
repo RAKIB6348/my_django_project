@@ -24,4 +24,13 @@ class Subject(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.code} - {self.name}"
+        return self.name
+
+
+class SchoolClass(models.Model):
+    name = models.CharField(max_length=50)
+    class_code = models.CharField(max_length=20, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
