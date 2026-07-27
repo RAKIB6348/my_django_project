@@ -3,8 +3,6 @@ from django.db import models
 
 class AcademicYear(models.Model):
     year = models.CharField(max_length=10)
-    start_date = models.DateField()
-    end_date = models.DateField()
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
