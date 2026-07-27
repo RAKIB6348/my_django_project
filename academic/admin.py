@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import AcademicYear, Section
 
-# Register your models here.
+
+admin.site.register(AcademicYear)
+admin.site.register(Section)
