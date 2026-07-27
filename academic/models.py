@@ -11,7 +11,6 @@ class AcademicYear(models.Model):
 
 class Section(models.Model):
     name = models.CharField(max_length=50)
-    academic_year = models.ForeignKey(AcademicYear, on_delete=models.CASCADE, related_name='sections')
 
     def __str__(self):
         return self.name

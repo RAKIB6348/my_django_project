@@ -18,13 +18,12 @@ class AcademicYearAdmin(admin.ModelAdmin):
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'academic_year')
-    list_filter = ('academic_year',)
+    list_display = ('name',)
     search_fields = ('name',)
-    ordering = ('academic_year', 'name')
+    ordering = ('name',)
 
     fieldsets = (
         ('Section Info', {
-            'fields': ('name', 'academic_year')
+            'fields': ('name',)
         }),
     )
