@@ -4,6 +4,7 @@ from django.db import models
 class AcademicYear(models.Model):
     year = models.CharField(max_length=10)
     is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.year
@@ -11,6 +12,7 @@ class AcademicYear(models.Model):
 
 class Section(models.Model):
     name = models.CharField(max_length=50)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -19,6 +21,7 @@ class Section(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.code} - {self.name}"
