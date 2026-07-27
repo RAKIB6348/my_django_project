@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AcademicYear, Section
+from .models import AcademicYear, Section, Subject
 
 
 @admin.register(AcademicYear)
@@ -25,5 +25,18 @@ class SectionAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Section Info', {
             'fields': ('name',)
+        }),
+    )
+
+
+@admin.register(Subject)
+class SubjectAdmin(admin.ModelAdmin):
+    list_display = ('code', 'name')
+    search_fields = ('name', 'code')
+    ordering = ('code',)
+
+    fieldsets = (
+        ('Subject Info', {
+            'fields': ('name', 'code')
         }),
     )
