@@ -6,9 +6,9 @@ from django.contrib import messages
 
 def login_view(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, email=email, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             messages.success(request, 'Login successful.')
@@ -21,7 +21,7 @@ def login_view(request):
             else:
                 return redirect('auth_user:admin_dashboard')
         else:
-            messages.error(request, 'Invalid email or password.')
+            messages.error(request, 'Invalid username or password.')
     return render(request, 'auth/login.html')
 
 
